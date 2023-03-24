@@ -125,7 +125,7 @@ const icons = [
         color: 'blue'
     }
 ];
-function creaCards (arrayFiltrato, oggetto) {
+function creaCards (arrayFiltrato) {
     //creiamo una costante per prendere la row
     const row = document.querySelector('.row');
     row.innerHTML ='';
@@ -151,7 +151,7 @@ function creaCards (arrayFiltrato, oggetto) {
     row.innerHTML += cards;
 };
 
-//verificare se 
+//verificare se il valore della select è uguale al valore dell'array
 function disegnaIcone(selezionaValore) {
    const arrayFiltrato = icons.filter((value) =>{
     if (value.type === selezionaValore || selezionaValore === 'all'){
@@ -162,7 +162,7 @@ function disegnaIcone(selezionaValore) {
    })
     // se l'elemento ha superato il test creo le card
     arrayFiltrato.forEach((value) => {
-        creaCards(arrayFiltrato, value)
+        creaCards(arrayFiltrato)
        console.log(value)
     })
     
@@ -170,7 +170,7 @@ function disegnaIcone(selezionaValore) {
 
 
 
-
+//funzione dell'evento della select che disegna i quadratini a seconda della scelta selezionata
 function selezionaLivello () {
      disegnaIcone(this.value)
 }
