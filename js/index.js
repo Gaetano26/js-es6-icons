@@ -135,7 +135,7 @@ function creaCards (arrayFiltrato) {
         const icona = arrayFiltrato[i];
         //constante card con il contenuto da creare e inserire 
         const card = `
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="col">
             <div class="card">
                 <div class="card-body d-flex flex-column justify-content-center align-items-center fs-3 py-3" style="color:${icona.color}">
                     <i class="${icona.prefix}${icona.family} ${icona.prefix}${icona.name}"></i>
@@ -163,7 +163,7 @@ function disegnaIcone(selezionaValore) {
     // se l'elemento ha superato il test creo le card
     arrayFiltrato.forEach((value) => {
         creaCards(arrayFiltrato)
-       console.log(value)
+    
     })
     
 };
