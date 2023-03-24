@@ -177,3 +177,4 @@ function selezionaLivello () {
 
 const select = document.getElementById('select')
 select.addEventListener('change', selezionaLivello)
+disegnaIcone(select.value)
