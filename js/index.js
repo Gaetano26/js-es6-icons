@@ -125,14 +125,14 @@ const icons = [
         color: 'blue'
     }
 ];
-function creaCards (oggetto) {
+function creaCards (arrayFiltrato, oggetto) {
     //creiamo una costante per prendere la row
     const row = document.querySelector('.row');
     row.innerHTML ='';
     let cards = '';
     //ciclo per creare delle card per ogni oggetto nell'array e i loro rispettivi valori
-    for (let i = 0; i < icons.length; i++) {
-        const icona = icons[i];
+    for (let i = 0; i < arrayFiltrato.length; i++) {
+        const icona = arrayFiltrato[i];
         //constante card con il contenuto da creare e inserire 
         const card = `
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
@@ -151,7 +151,7 @@ function creaCards (oggetto) {
     row.innerHTML += cards;
 };
 
-
+//verificare se 
 function disegnaIcone(selezionaValore) {
    const arrayFiltrato = icons.filter((value) =>{
     if (value.type === selezionaValore || selezionaValore === 'all'){
@@ -162,7 +162,8 @@ function disegnaIcone(selezionaValore) {
    })
     // se l'elemento ha superato il test creo le card
     arrayFiltrato.forEach((value) => {
-        creaCards(value)
+        creaCards(arrayFiltrato, value)
+       console.log(value)
     })
     
 };
@@ -176,4 +177,3 @@ function selezionaLivello () {
 
 const select = document.getElementById('select')
 select.addEventListener('change', selezionaLivello)
-disegnaIcone(select.value);
